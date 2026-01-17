@@ -1,0 +1,11 @@
+<tr class="hover:bg-slate-800/30 transition-colors border-b border-slate-700/50 last:border-0 group">
+    <td class="px-6 py-4 text-slate-400 font-mono text-xs">{{.CreatedAt.Format "02 Jan 15:04"}}</td>
+    <td class="px-6 py-4 text-slate-200 font-bold text-sm">{{.ISP}}</td>
+    <td class="px-6 py-4 text-emerald-500 font-bold tabular-nums text-sm">{{printf "%.2f" .Download}} <span class="text-xs font-bold text-emerald-500/50 ml-1">Mbps</span></td>
+    <td class="px-6 py-4 text-blue-500 font-bold tabular-nums text-sm">{{printf "%.2f" .Upload}} <span class="text-xs font-bold text-blue-500/50 ml-1">Mbps</span></td>
+    <td class="px-6 py-4 text-amber-500 font-bold tabular-nums text-sm">{{printf "%.0f" .Ping}} <span class="text-xs font-bold text-amber-500/50 ml-1">ms</span></td>
+    <td class="px-6 py-4 {{if gt .PacketLoss 0.0}}text-red-500 font-bold{{else}}text-slate-500{{end}} tabular-nums text-sm">
+        {{if eq .PacketLoss 0.0}}0%{{else}}{{printf "%.2f" .PacketLoss}}%{{end}}
+    </td>
+    <td class="px-6 py-4 text-slate-500 text-xs">{{.ServerName}}</td>
+</tr>

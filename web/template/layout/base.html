@@ -1,0 +1,18 @@
+{{define "base"}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{block "title" .}}NetDash{{end}}</title>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="/static/style.css" rel="stylesheet">
+    {{block "head" .}}{{end}}
+</head>
+<body class="{{block "bodyClass" .}}min-h-screen flex items-center justify-center p-4 sm:p-6 pb-24{{end}}">
+    {{template "content" .}}
+    {{block "scripts" .}}{{end}}
+</body>
+</html>
+{{end}}

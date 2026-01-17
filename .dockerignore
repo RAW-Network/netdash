@@ -1,0 +1,9 @@
+data
+*.db*
+netdash
+speedtest
+*.exe
+.git
+.gitignore
+Dockerfile
+.dockerignore
